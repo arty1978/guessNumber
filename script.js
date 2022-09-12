@@ -38,15 +38,16 @@ document.querySelector('.check').addEventListener('click', () => {
         document.body.style.backgroundColor = '#60b347'
         document.querySelector('.number').style.width = '30rem'
 
-    } else if (guess !== secretNumber) {
+    } else {
         dispalyMsg(guess > secretNumber ? '📈 The number is to HIGH!' : '📉 The number is to LOW!');
         score--;
         document.querySelector('.score').textContent = score;
-    } else if (score > 0) {
-        dispalyMsg('☠ You lost! Try again');
+        if (score === 0) {
+            dispalyMsg('☠ You lost! Try again');
+        }
     }
 });
 
-
+// if (guess !== secretNumber) 
 
 
